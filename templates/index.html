@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaatra Package Prediction</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form container styling */
+        .form-container {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #495057;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #495057;
+            box-sizing: border-box;
+        }
+
+        /* Submit button styles */
+        button {
+            background-color: #01d0ff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #a200ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Tour Package Prediction Model</h2>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label for="DurationOfPitch">Duration of the Pitch</label>
+                <input type="text" id="DurationOfPitch" name="DurationOfPitch" placeholder="Enter duration" required>
+            </div>
+            <div class="form-group">
+                <label for="Age">Age</label>
+                <input type="number" id="Age" name="Age" placeholder="Enter your age" required>
+            </div>
+            <div class="form-group">
+                <label for="MonthlyIncome">Monthly Income</label>
+                <input type="number" id="MonthlyIncome" name="MonthlyIncome" placeholder="Enter your income" required>
+            </div>
+            <div class="form-group">
+                <label for="PitchSatisfactionScore">Pitch Satisfaction Score</label>
+                <input type="number" id="PitchSatisfactionScore" name="PitchSatisfactionScore"
+                    placeholder="Enter score (1-5)" required>
+            </div>
+            <div class="form-group">
+                <label for="NumberOfTrips">Number of Trips in a Year</label>
+                <input type="number" id="NumberOfTrips" name="NumberOfTrips" placeholder="Enter number of trips"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="Passport">Do You Have a Passport?</label>
+                <input type="number" id="Passport" name="Passport" placeholder="1 for Yes, 0 for No" required>
+            </div>
+            <div class="form-group">
+                <label for="CityTier">City Tier</label>
+                <input type="number" id="CityTier" name="CityTier" placeholder="Enter 1, 2, or 3" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
